@@ -1,16 +1,17 @@
 package controllers;
 
+import org.example.Main;
+import org.example.controllers.ConstructorParameter;
 import org.junit.jupiter.api.Test;
-import services.IGreetingService;
-import services.MyGreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+@SpringBootTest(classes = Main.class)
 class ConstructorParameterTest {
+    @Autowired
+    private ConstructorParameter constructorParameter;
     @Test
     public void test(){
-        IGreetingService greetingService = new MyGreetingService();
-        ConstructorParameter constructorParameter = new ConstructorParameter(greetingService);
         constructorParameter.greet();
     }
 }

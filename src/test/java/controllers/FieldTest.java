@@ -1,15 +1,17 @@
 package controllers;
 
+import org.example.Main;
+import org.example.controllers.Field;
 import org.junit.jupiter.api.Test;
-import services.IGreetingService;
-import services.MyGreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+@SpringBootTest(classes = Main.class)
 class FieldTest {
+    @Autowired
+    private Field field;
     @Test
     public void test(){
-        Field field = new Field();
         field.greet();
     }
 }

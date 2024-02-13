@@ -1,15 +1,17 @@
 package controllers;
 
+import org.example.Main;
+import org.example.controllers.ManualObject;
 import org.junit.jupiter.api.Test;
-import services.IGreetingService;
-import services.MyGreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+@SpringBootTest(classes = Main.class)
 class ManualObjectTest {
+    @Autowired
+    private ManualObject manualObject;
     @Test
     public void test(){
-        ManualObject manualObject = new ManualObject();
         manualObject.greet();
     }
 }

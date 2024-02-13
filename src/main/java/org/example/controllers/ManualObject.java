@@ -1,9 +1,10 @@
-package controllers;
+package org.example.controllers;
 
-import org.springframework.stereotype.Component;
-import services.IGreetingService;
-import services.MyGreetingService;
+import org.springframework.stereotype.Controller;
+import org.example.services.IGreetingService;
+import org.example.services.MyGreetingService;
 
+@Controller
 public class ManualObject {
     private final IGreetingService greetingService;
 

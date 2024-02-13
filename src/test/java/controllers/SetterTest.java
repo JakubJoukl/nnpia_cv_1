@@ -1,17 +1,17 @@
 package controllers;
 
+import org.example.Main;
+import org.example.controllers.Setter;
 import org.junit.jupiter.api.Test;
-import services.IGreetingService;
-import services.MyGreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+@SpringBootTest(classes = Main.class)
 class SetterTest {
+    @Autowired
+    private Setter setter;
     @Test
     public void test(){
-        IGreetingService greetingService = new MyGreetingService();
-        Setter setter = new Setter();
-        setter.setGreetingService(greetingService);
         setter.greet();
     }
 }
